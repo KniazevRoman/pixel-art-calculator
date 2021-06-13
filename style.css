@@ -8,6 +8,13 @@ body {
     background-color: rgb(150, 150, 200);
 }
 
+@media screen and (min-width: 600px) {
+    .calculator {
+        width: 600px;
+        margin: 0 auto;
+    }
+}
+
 .calculator__body {
     padding: 24px;
 }
