@@ -32,11 +32,17 @@ body {
     height: 72px;
     background-color: rgb(68, 151, 86);
     padding: 0 8px;
-    font-size: 40px;
+    font-size: 32px;
     line-height: 72px;
     color:rgb(9, 240, 59);
     text-align: right;
     margin-bottom: 24px;
+}
+
+@media screen and (min-width: 500px) {
+    .calculator__screen {
+        font-size: 40px;
+    }
 }
 
 .calculator__controls {
@@ -95,7 +101,7 @@ body {
 }
 
 .calculator__controls-button_power {
-    font-size: 32px;
+    font-size: 28px;
     background-color: rgb(255, 119, 119);
     box-shadow: 
         -4px 4px 0px 4px rgb(50, 50, 104),
