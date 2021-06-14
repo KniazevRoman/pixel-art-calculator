@@ -48,6 +48,7 @@ function createCalc() {
                 startClearButton();
                 startOperatorButtons();
                 startEqualButton();
+                startKeyboardSupport();
             } else {
                 powered = false;
                 powerIndicator.style.backgroundColor = 'rgb(50, 50, 104)';
@@ -60,6 +61,7 @@ function createCalc() {
                 terminateClearButton();
                 terminateOperatorButtons();
                 terminateEqualButton();
+                terminateKeyboardSupport();
             }
         });
     }
@@ -184,6 +186,42 @@ function createCalc() {
         }
     }
 
+    function processKeyboard(event) {
+
+        let numberButtons = document.querySelectorAll('[data-number]');
+        for (let numberButton of numberButtons) {
+            if (numberButton.dataset.number == event.key) {
+                let event = new MouseEvent('click', {
+                    view: window,
+                    bubbles: true,
+                    cancelable: true
+                });
+
+                let equalButton = document.querySelector('.calculator__controls-button_result');
+                equalButton.focus();
+
+                numberButton.dispatchEvent(event);
+            }
+        }
+
+        let operatorButtons = document.querySelectorAll('.calculator__controls-button_operator');
+        for (let operatorButton of operatorButtons) {
+            if (operatorButton.textContent == event.key) {
+                let event = new MouseEvent('click', {
+                    view: window,
+                    bubbles: true,
+                    cancelable: true
+                });
+
+                operatorButton.dispatchEvent(event);
+            }
+        }
+
+        if (event.key == 'Delete') {
+            clearInput();
+        }
+    }
+
     /* Round the output to fit in the screen */
 
     function checkForOverflow(output) {
@@ -220,6 +258,11 @@ function createCalc() {
         equalButton.addEventListener('click', processEqual);
     }
 
+    function startKeyboardSupport() {
+        let controls = document.querySelector('.calculator__controls');
+        controls.addEventListener('keyup', processKeyboard);
+    }
+
     /* Turn off the calculator */
 
     function terminateNumberButtons() {
@@ -244,5 +287,10 @@ function createCalc() {
     function terminateEqualButton() {
         let equalButton = document.querySelector('.calculator__controls-button_result');
         equalButton.removeEventListener('click', processEqual);
+    }
+
+    function terminateKeyboardSupport() {
+        let controls = document.querySelector('.calculator__controls');
+        controls.removeEventListener('keyup', processKeyboard);
     }
 }

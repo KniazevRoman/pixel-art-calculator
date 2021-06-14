@@ -8,9 +8,9 @@ body {
     background-color: rgb(150, 150, 200);
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 500px) {
     .calculator {
-        width: 600px;
+        width: 500px;
         margin: 0 auto;
     }
 }
@@ -151,4 +151,8 @@ body {
     box-shadow: 
         inset -4px 4px 0px 4px rgb(50, 50, 104),
         inset 4px -4px 0px 4px rgb(200, 200, 200);
+}
+
+.copyright {
+    color:rgb(219, 219, 219);
 }
