@@ -2,7 +2,7 @@
 
 This repository is the last project of the Foundations path of the Odin Project self-taught project (https://www.theodinproject.com/). The Odin Project is focused on building knowledge by doing.
 
-The main goal of the "Calculator" project (https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/rock-paper-scissors) is to combine everything a student have learned so far.
+The main goal of the "Calculator" project (https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/calculator) is to combine everything a student have learned so far.
 
 I have made the design of the calculator myself. It is inspired by old pixel 8-bit games of the 90s. 
 
